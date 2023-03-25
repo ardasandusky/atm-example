@@ -28,3 +28,8 @@ def withdrawal(account, balance):
                 print("You can take your money.")
             else:
                 print(f"{account['balance']} balance in your account numbered {account['accNo']}.")
+        else:
+            print("Sorry, transaction denied.")
+
+
+withdrawal(user2acc, 300)
