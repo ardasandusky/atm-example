@@ -17,6 +17,7 @@ def withdrawal(account, balance):
     print(f"Hello, {account['name']}")
 
     if account['balance'] >= balance:
+        account['balance'] -= balance
         print("You can take your money.")
     else:
         total = account['balance'] + account['addBalance']
@@ -25,6 +26,10 @@ def withdrawal(account, balance):
             addBalanceUsage = input("Do you want to use additional accounts?(y/n)")
 
             if addBalanceUsage == "e":
+
+                amountSpent = account - balance
+                account['balance'] = 0
+                hesap['addBalance'] -= amountSpent
                 print("You can take your money.")
             else:
                 print(f"{account['balance']} balance in your account numbered {account['accNo']}.")
